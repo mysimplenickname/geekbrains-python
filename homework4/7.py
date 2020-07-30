@@ -8,6 +8,9 @@ def user_input_check(user_number):
 
 def gen(user_number):
     result = 1
+    if user_number == 0:
+        yield result
+
     for i in range(1, user_number + 1):
         result *= i
         yield result
