@@ -44,9 +44,9 @@ class Storage:
             self.real_capacity += self.check_storage_overflow(self.check_user_input(item_amount))
             print(f"You added {item_amount} item(s). {self.storage_capacity - self.real_capacity} free space(s) left.")
 
-            try:
+            if item_type in self.items:
                 self.items[item_type] += item_amount
-            except KeyError:
+            else:
                 self.items[item_type] = item_amount
 
         except MyValueError as value_exception:
